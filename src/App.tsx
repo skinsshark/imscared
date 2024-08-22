@@ -6,7 +6,7 @@ const Crowd = ({ numOfPeople }: { numOfPeople: number }) => {
   return (
     <div className="crowd">
       {people.map((_, i) => (
-        <p key={i}>你</p>
+        <h3 key={i}>{Math.random() < 0.5 ? '🧍‍♀️' : '🧍'}</h3>
       ))}
     </div>
   );
