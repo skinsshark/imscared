@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './App.css';
 
 const Crowd = ({ numOfPeople }: { numOfPeople: number }) => {
@@ -14,6 +14,8 @@ const Crowd = ({ numOfPeople }: { numOfPeople: number }) => {
 
 function App() {
   const [numOfPeople, setNumOfPeople] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+
   return (
     <div className="page-wrapper">
       <header>
@@ -22,9 +24,15 @@ function App() {
           <div className="input-wrapper">
             <p>number of people: </p>
             <input
+              ref={inputRef}
               type="number"
               min={0}
               value={numOfPeople}
+              onSelect={() => {
+                if (inputRef.current) {
+                  inputRef.current.select();
+                }
+              }}
               onChange={(e) => setNumOfPeople(parseInt(e.target.value))}
             />
           </div>
