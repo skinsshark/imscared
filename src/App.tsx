@@ -1,6 +1,9 @@
+import { useState } from 'react';
+import Crowd from './Crowd';
 import './App.css';
 
 function App() {
+  const [numOfPeople, setNumOfPeople] = useState(0);
   return (
     <div className="page-wrapper">
       <header>
@@ -8,14 +11,17 @@ function App() {
         <div className="options">
           <div className="input-wrapper">
             <p>number of people: </p>
-            <input type="number" min={0} />
-          </div>
-          <div className="camera-control-wrapper">
-            <p>cameras out? </p>
-            <p>yes / no</p>
+            <input
+              type="number"
+              min={0}
+              value={numOfPeople}
+              onChange={(e) => setNumOfPeople(parseInt(e.target.value))}
+            />
           </div>
         </div>
       </header>
+
+      <Crowd numOfPeople={numOfPeople} />
 
       <article>
         <p>you</p>

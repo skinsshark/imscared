@@ -48,4 +48,5 @@ article {
   align-items: center;
   align-self: center;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
