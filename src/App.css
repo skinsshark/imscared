@@ -86,5 +86,6 @@ input {
 @media only screen and (max-width: 992px) {
   .crowd {
     width: 100%;
+    gap: 0;
   }
 }
