@@ -72,3 +72,11 @@ input {
     transform: translateY(60px);
   }
 }
+
+.crowd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}

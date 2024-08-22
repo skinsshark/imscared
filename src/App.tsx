@@ -1,6 +1,16 @@
 import { useState } from 'react';
-import Crowd from './Crowd';
 import './App.css';
+
+const Crowd = ({ numOfPeople }: { numOfPeople: number }) => {
+  const people = Array.from({ length: numOfPeople });
+  return (
+    <div className="crowd">
+      {people.map((_, i) => (
+        <p key={i}>你</p>
+      ))}
+    </div>
+  );
+};
 
 function App() {
   const [numOfPeople, setNumOfPeople] = useState(0);
