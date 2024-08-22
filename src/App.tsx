@@ -23,9 +23,11 @@ function App() {
 
       <Crowd numOfPeople={numOfPeople} />
 
-      <article>
-        <p>you</p>
-      </article>
+      <div className="you-wrapper">
+        <div className="you">
+          <p>you</p>
+        </div>
+      </div>
     </div>
   );
 }
