@@ -41,21 +41,21 @@ input {
   border-radius: 0;
 }
 
-.you,
-.you-wrapper {
+.me,
+.me-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.you-wrapper {
+.me-wrapper {
   width: 200px;
   height: 200px;
   align-self: center;
   overflow: hidden;
 }
 
-.you {
+.me {
   width: 200px;
   height: 200px;
   border: 3px solid #000;
@@ -66,7 +66,7 @@ input {
 }
 
 @media only screen and (max-width: 992px) {
-  .you {
+  .me {
     width: 150px;
     height: 150px;
     transform: translateY(60px);

@@ -33,9 +33,9 @@ function App() {
 
       <Crowd numOfPeople={numOfPeople} />
 
-      <div className="you-wrapper">
-        <div className="you">
-          <p>you</p>
+      <div className="me-wrapper">
+        <div className="me">
+          <p>me</p>
         </div>
       </div>
     </div>
