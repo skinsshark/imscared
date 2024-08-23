@@ -6,7 +6,14 @@ const Crowd = ({ numOfPeople }: { numOfPeople: number }) => {
   return (
     <div className="crowd">
       {people.map((_, i) => (
-        <h3 key={i}>{Math.random() < 0.5 ? '🧍‍♀️' : '🧍'}</h3>
+        // <h3 key={i}>{Math.random() < 0.5 ? '🧍‍♀️' : '🧍'}</h3>
+        <div className="person" key={`person-${i}`}>
+          <img
+            draggable="false"
+            src={Math.random() < 0.5 ? '/person.png' : '/person2.png'}
+            alt="person"
+          />
+        </div>
       ))}
     </div>
   );

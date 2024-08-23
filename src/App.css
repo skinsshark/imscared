@@ -23,6 +23,7 @@ header .options {
 @media only screen and (max-width: 992px) {
   header {
     flex-direction: column;
+    align-items: center;
     gap: 48px;
   }
 }
@@ -34,12 +35,14 @@ header .options {
 }
 
 button {
+  color: #000;
   position: absolute;
   outline: none;
   border: none;
   background: #fff;
   cursor: pointer;
   bottom: 3px;
+  user-select: none;
 }
 
 button:last-child {
@@ -54,6 +57,17 @@ input {
   border-radius: 0;
   text-align: center;
   padding-left: 12px;
+}
+
+@media only screen and (max-width: 992px) {
+  .input-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  input {
+    padding: 0;
+  }
 }
 
 .me,
@@ -91,16 +105,33 @@ input {
 .crowd {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 16px;
   justify-content: center;
   align-items: center;
   align-self: center;
   width: 80%;
+  user-select: none;
+}
+
+.crowd img {
+  height: 160px;
+}
+
+.crowd .person {
+  height: 40px;
 }
 
 @media only screen and (max-width: 992px) {
   .crowd {
     width: 100%;
-    gap: 0;
+    gap: 8px;
+  }
+
+  .crowd img {
+    height: 120px;
+  }
+
+  .crowd .person {
+    height: 60px;
   }
 }
