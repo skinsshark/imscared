@@ -12,9 +12,51 @@ const Crowd = ({ numOfPeople }: { numOfPeople: number }) => {
   );
 };
 
+const CrowdControl = ({
+  numOfPeople,
+  setNumOfPeople,
+}: {
+  numOfPeople: number;
+  setNumOfPeople: React.Dispatch<React.SetStateAction<number>>;
+}) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const onDecrease = () => {
+    setNumOfPeople((val) => Math.max(0, val - 1));
+  };
+
+  const onIncrease = () => {
+    setNumOfPeople((val) => val + 1);
+  };
+
+  return (
+    <div className="input-wrapper">
+      <button className={numOfPeople === 0 ? 'hide' : ''} onClick={onDecrease}>
+        -
+      </button>
+      <input
+        ref={inputRef}
+        type="number"
+        min={0}
+        value={numOfPeople}
+        onSelect={() => {
+          if (inputRef.current) {
+            inputRef.current.select();
+          }
+        }}
+        onChange={(e) =>
+          e.target.value === ''
+            ? setNumOfPeople(0)
+            : setNumOfPeople(parseInt(e.target.value))
+        }
+      />
+      <button onClick={onIncrease}>+</button>
+    </div>
+  );
+};
+
 function App() {
   const [numOfPeople, setNumOfPeople] = useState(0);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <div className="page-wrapper">
@@ -22,18 +64,10 @@ function App() {
         <h1>i'm going to get stage fright</h1>
         <div className="options">
           <div className="input-wrapper">
-            <p>number of people: </p>
-            <input
-              ref={inputRef}
-              type="number"
-              min={0}
-              value={numOfPeople}
-              onSelect={() => {
-                if (inputRef.current) {
-                  inputRef.current.select();
-                }
-              }}
-              onChange={(e) => setNumOfPeople(parseInt(e.target.value))}
+            <p># of people: </p>
+            <CrowdControl
+              numOfPeople={numOfPeople}
+              setNumOfPeople={setNumOfPeople}
             />
           </div>
         </div>

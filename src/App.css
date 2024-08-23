@@ -11,18 +11,12 @@
 header {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: 12px;
 }
 
 header .options {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-
-header .options > div {
-  display: flex;
-  justify-content: space-between;
   gap: 8px;
 }
 
@@ -33,12 +27,33 @@ header .options > div {
   }
 }
 
+.input-wrapper {
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+button {
+  position: absolute;
+  outline: none;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  bottom: 3px;
+}
+
+button:last-child {
+  right: 0;
+}
+
 input {
-  width: 8rem;
+  width: 12rem;
   border: none;
   border-bottom: 3px solid #000;
   outline: none;
   border-radius: 0;
+  text-align: center;
+  padding-left: 12px;
 }
 
 .me,

@@ -38,3 +38,7 @@ h3 {
     height: 3rem;
   }
 }
+
+.hide {
+  visibility: hidden;
+}
